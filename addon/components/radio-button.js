@@ -18,7 +18,7 @@ export default RadioButtonBase.extend({
       this.set('layoutName', 'components/labeled-radio-button');
 
       // our change event handler becomes unused
-      this.set('change', undefined);
+      // this.set('change', undefined);
 
       // don't bind name, type, etc to the label
       var originalAttrs = this.get('attributeBindings');
@@ -47,6 +47,10 @@ export default RadioButtonBase.extend({
 
   sendChangedAction: function() {
     this.sendAction('changed', this.get('value'));
+  },
+
+  tap: function () {
+    this.change()
   },
 
   actions: {
